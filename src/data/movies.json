@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Tiger Zinda Hai",
+    "description": "Tiger Zinda Hai is a 2017 Indian Hindi-language action thriller film directed by Ali Abbas Zafar and produced by Aditya Chopra under Yash Raj Films.",
+    "image": "movieThumbnail"
+  },
+  {
+    "name": "Tiger 3",
+    "description": "A 2023 Indian Hindi-language action thriller film directed by Maneesh Sharma and produced by Aditya Chopra under Yash Raj Films.",
+    "image": "src/assets/tiger3.jpg"
+  },
+  {
+    "name": "Pathaan",
+    "description": "The film follows Pathaan, an exiled RAW agent, who works with ISI agent Rubina Mohsin, to take down Jim, a former RAW agent turned rogue.",
+    "image": "movieThumbnail"
+  },
+  {
+    "name": "War",
+    "description": "War is a 2019 Indian Hindi-language action thriller film directed by Siddharth Anand and produced by Aditya Chopra under Yash Raj Films.",
+    "image": "movieThumbnail"
+  }
+]

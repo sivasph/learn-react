@@ -1,0 +1,53 @@
+
+body, html, #root {
+  margin: 1;
+  padding: 1;
+}
+.h1{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.main {
+  display: block; /* Remove flex or center styles */
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem; /* optional spacing */
+}
+
+.card{
+  border: 1px solid rgb(23, 23, 23);
+  background-color: #150a0a;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  max-width: 280px;
+  max-height: fit-content;
+  display: inline-block;
+  color: white;
+  text-align: left;
+  margin: 5px;
+}
+.link{
+  color: #0e0275;
+  text-decoration: none;
+}
+.icon-arrow {
+  vertical-align: text-center;
+  color: #0e0275;
+  transform: translateY(2px);
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f1f1f1;
+  padding: 1rem;
+  text-align: center;
+  z-index: 100;
+}
