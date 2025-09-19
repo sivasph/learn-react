@@ -5,6 +5,8 @@ import movieThumbnail from './assets/default.jpg';
 
 import moviesData from './data/movies.json'
 import Footer from "./Footer";
+import Search from "./Search";
+import Header from "./Header";
 
 function resolveImage(imageKey) {
   if (imageKey === 'movieThumbnail') return movieThumbnail;
@@ -14,6 +16,8 @@ function resolveImage(imageKey) {
 function MoviesPage() {
   return (
     <>
+    <Header/>
+    <Search/>
     <div className="movies-container">
       <h1 className="h1">Movies List</h1>
       { moviesData.map((movie, index) => (
