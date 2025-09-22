@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function NavBar() {
     return (
         <header className="header">
             <h1 className="h1">Welcome to Movies Zone</h1>
@@ -15,4 +15,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default NavBar;

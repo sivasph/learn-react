@@ -1,10 +1,10 @@
 import Footer from "./Footer";
-import Header from "./Header";
+import NavBar from "./NavBar";
 
 function About() {
     return (
         <>
-        <Header />
+        <NavBar />
         <div className="main">
         <div className="about">
             <h2 className="h1">About Movies Zone</h2>

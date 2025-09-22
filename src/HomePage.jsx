@@ -1,22 +1,22 @@
-import Header from './Header'
-import MoviesSection from './MoviesSection'
-import Footer from './Footer'
-import Card from './Card';
-import Search from './Search'
+import React, { useState } from 'react';
+import NavBar from './NavBar';
+import MoviesSection from './MoviesSection';
+import Footer from './Footer';
+import Search from './Search';
 
 function HomePage() {
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <>
-      <Header />
-      <Search/>
-      <MoviesSection>
-        <Card />
-      </MoviesSection>
+      <NavBar />
+      <div>
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <MoviesSection searchTerm={searchTerm} />
+      </div>
       <Footer />
     </>
-
   );
 }
 
-export default HomePage
+export default HomePage;
