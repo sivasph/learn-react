@@ -13,35 +13,53 @@ function resolveImage(imageKey) {
 }
 
 function MoviesPage() {
-  // Correct useState: get both value and setter
+  const [selectedGenre, setSelectedGenre] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter movies based on searchTerm
-  const filteredMovies = moviesData.filter(movie =>
-    movie.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Fetch movies when genre changes
+  useEffect(() => {
+    console.log("🔁 useEffect triggered with genre:", selectedGenre);
+
+    if (selectedGenre) {
+      const fetchMovies = async () => {
+        console.log("📡 Fetching:", `https://api.sampleapis.com/movies/${selectedGenre}`);
+        setLoading(true);
+        setError('');
+        try {
+          const response = await fetch(`https://api.sampleapis.com/movies/${selectedGenre}`);
+          const data = await response.json();
+          console.log("✅ Fetched movies:", data);
+          setMovies(data);
+        } catch (err) {
+          console.error("❌ Fetch failed:", err);
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchMovies();
+    }
+  }, [selectedGenre]);
 
   return (
-    <>
-      <NavBar />
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <div className="movies-container">
-        <h1 className="h1">Movies List</h1>
-        {filteredMovies.length > 0 ? (
-          filteredMovies.map((movie, index) => (
-            <Card
-              key={index}
-              name={movie.name}
-              description={movie.description}
-              image={resolveImage(movie.image)}
-            />
-          ))
-        ) : (
-          <p className="p" style={{ color: 'red' }}>No movies found.</p>
-        )}
-      </div>
-      <Footer />
-    </>
+    <div>
+      <MoviesDropDown
+        selectedGenre={selectedGenre} // ✅ MUST be passed
+        onSelectGenre={setSelectedGenre} // ✅ This updates parent state
+      />
+
+      <MoviesSection
+        movies={movies}
+        loading={loading}
+        error={error}
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+      />
+    </div>
   );
 }
 

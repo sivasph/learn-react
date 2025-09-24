@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       
        <div className="container mx-auto text-center">
-        <p>&copy; {new Date().getFullYear()} Movies Zone. All rights reserved.</p>
+        <p className="footer_p">&copy; {new Date().getFullYear()} Movies Zone. All rights reserved.</p>
       </div>
      
     </footer>

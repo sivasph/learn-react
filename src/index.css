@@ -4,7 +4,7 @@
   top: 0;
   right: 0;
   width: 100%;
-  background: #f1f1f1;
+  background-color: rgba(15, 32, 39, 0.85);
   padding: 0rem;  
   text-align: center;
   z-index: 100;
@@ -12,27 +12,30 @@
 body, html, #root {
   margin: 1;
   padding: 1;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 .h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 .h1 a {
-  color: #1d2fba; /* your preferred blue */
+  color: #ffffff; /* your preferred blue */
   text-decoration: none; /* optional: remove underline */
 }
 .h1 a:hover{
-  color:#1d2fba;
+  color:#f1f2f6;
 }
 .h1 a:focus,
 .h1 a:active {
-  color: rgb(0, 51, 255);
+  color: rgb(225, 226, 231);
 }
 .p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
   margin-bottom: 1rem;
+  color: #ccc;
 }
 .main {
   padding-top: 100px;
@@ -42,14 +45,14 @@ body, html, #root {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0.1rem 2rem;
   font-size: 1.5rem;
-  color: #1d2fba;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
 }
 .nav-link:hover {
-  background-color: #14229b;
+  background-color: gray;
   color: white;
 }
 .logo-container {
@@ -58,21 +61,50 @@ body, html, #root {
   left: 0;
   padding: 1rem; /* optional spacing */
 }
-
-.card{
+.logo img {
+  display: block;
+  padding: 2rem;
+  width: 35px; /* adjust size as needed */
+  height: 35px; /* adjust size as needed */ 
+}
+.card {
   border: 1px solid rgb(23, 23, 23);
   background-color: #150a0a;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  max-width: 280px;
-  max-height: fit-content;
+  width: 280px;             /* Use fixed width */
+  height: 350px;            /* ✅ Fixed height */
   display: inline-block;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: left;
   margin: 5px;
+  overflow: hidden;         /* Prevent overflow */
+  position: relative;
 }
+
+.card-image {
+  width: 100%;
+  height: 300px;            /* Make room for title below */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Title styling */
+.card h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  max-height: 3.6em;         /* ~2 lines of text */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  line-clamp: 2;     /* ✅ Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+
 .icon-arrow {
   vertical-align: text-center;
   color: rgb(0, 51, 255);
@@ -112,8 +144,48 @@ body, html, #root {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #f1f1f1;
+  background-color: rgba(15, 32, 39, 0.85);
   padding: 1rem;
   text-align: center;
   z-index: 100;
+}
+.footer_p{
+  color: #ffffff;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: rgb(167, 159, 159);
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }
