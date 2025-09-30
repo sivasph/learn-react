@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
-import Card from './Card';
+import { useState } from 'react';
 import movieThumbnail from './assets/default.jpg';
 
-import moviesData from './data/movies.json'
-import Footer from "./Footer";
-import Search from "./Search";
-import NavBar from "./NavBar";
 
 function resolveImage(imageKey) {
   if (imageKey === 'movieThumbnail') return movieThumbnail;
@@ -48,8 +43,8 @@ function MoviesPage() {
   return (
     <div>
       <MoviesDropDown
-        selectedGenre={selectedGenre} // ✅ MUST be passed
-        onSelectGenre={setSelectedGenre} // ✅ This updates parent state
+        selectedGenre={selectedGenre}
+        onSelectGenre={setSelectedGenre}
       />
 
       <MoviesSection

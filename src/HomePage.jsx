@@ -40,12 +40,14 @@ function HomePage() {
   return (
     <>
       <NavBar />
-      <div>
-        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <MoviesDropDown
-          selectedGenre={selectedGenre} // ✅ MUST be passed
-          onSelectGenre={setSelectedGenre} // ✅ This updates parent state
-        />
+      <div className='home'>
+        <div>
+          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <MoviesDropDown
+            selectedGenre={selectedGenre} // ✅ MUST be passed
+            onSelectGenre={setSelectedGenre} // ✅ This updates parent state
+          />
+        </div>
 
         <MoviesSection searchTerm={searchTerm}
           movies={movies}

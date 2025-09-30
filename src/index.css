@@ -12,7 +12,13 @@
 body, html, #root {
   margin: 1;
   padding: 1;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: #2c5364;
+}
+.home{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  margin: 2rem;
+  color: #ccc;
 }
 .h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -55,17 +61,30 @@ body, html, #root {
   background-color: gray;
   color: white;
 }
+.login-link {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.1rem 2rem;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+}
 .logo-container {
   position: absolute;
   top: 0;
-  left: 0;
-  padding: 1rem; /* optional spacing */
+  left: 50px;
+  padding: 0rem;
 }
-.logo img {
+.logo-img {
   display: block;
-  padding: 2rem;
-  width: 35px; /* adjust size as needed */
-  height: 35px; /* adjust size as needed */ 
+  padding: 1rem;
+  width: 110px; /* adjust size as needed */
+  height: 110px; /* adjust size as needed */ 
 }
 .card {
   border: 1px solid rgb(23, 23, 23);
@@ -73,8 +92,8 @@ body, html, #root {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  width: 280px;             /* Use fixed width */
-  height: 350px;            /* ✅ Fixed height */
+  width: 290px;             /* Use fixed width */
+  height: 400px;            /* ✅ Fixed height */
   display: inline-block;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -188,4 +207,67 @@ body, html, #root {
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+}
+.submit-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: rgb(167, 159, 159);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;          /* Take up full line */
+  margin: 0 auto; 
+}
+.submit-button:hover {
+  background-color: gray;
+}
+.button-container {
+  width: 600px;
+}
+.about{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  margin: 2rem;
+  color: #ccc;
+}
+.contact{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  margin: 2rem;
+  color: #ccc;
+}
+.login{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  margin: 2rem;
+  color: #ccc;
+}
+.card-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-buttons {
+  opacity: 1;
+}
+
+.card-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.card-buttons button:hover {
+  background-color: white;
+  color: black;
 }
