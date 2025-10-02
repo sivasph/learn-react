@@ -71,7 +71,46 @@ body, html, #root {
   cursor: pointer;
   text-decoration: none;
   position: absolute;
-  right: 10px;
+  right: 150px;
+  top: 40px;
+}
+.signup-link {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.1rem 2rem;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
+.logout-link {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.1rem 2rem;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+}
+.liked-movie-link {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.1rem 2rem;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: 130px;
   top: 40px;
 }
 .logo-container {
@@ -243,7 +282,7 @@ body, html, #root {
   margin: 2rem;
   color: #ccc;
 }
-.card-buttons {
+.like-buttons {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -253,11 +292,11 @@ body, html, #root {
   transition: opacity 0.3s ease;
 }
 
-.card:hover .card-buttons {
+.card:hover .like-buttons {
   opacity: 1;
 }
 
-.card-buttons button {
+.like-buttons button {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   border: 1px solid white;
@@ -267,7 +306,35 @@ body, html, #root {
   font-size: 0.85rem;
 }
 
-.card-buttons button:hover {
+.like-buttons button:hover {
+  background-color: white;
+  color: black;
+}
+.share-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .share-buttons {
+  opacity: 1;
+}
+
+.share-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.share-buttons button:hover {
   background-color: white;
   color: black;
 }
