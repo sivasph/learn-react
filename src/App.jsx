@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import MoviesPage from './MoviesPage'
-import About from './About';
-import Contact from './Contact'
-import Login from './Login';
-import Signup from './Signup';
-import Logout from './Logout';
-import LikedMovies from './LikedMovies'
+import HomePage from './components/HomePage';
+import MoviesPage from './components/MoviesPage'
+import About from './components/About';
+import Contact from './components/Contact'
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Logout from './components/Logout';
+import LikedMovies from './components/LikedMovies'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

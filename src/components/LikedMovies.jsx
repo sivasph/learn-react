@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { auth, db } from "../firebase.cjs";
+import { auth, db } from "../../firebase.cjs";
 import { collection, getDocs } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { toast } from "react-toastify";
@@ -51,7 +51,7 @@ function LikedMovies() {
     <div className="main">
       <h1 className="h1">Liked Movies</h1>
       {likedMovies.length === 0 ? (
-        <p>You haven't liked any movies yet.</p>
+        <p className="p">You haven't liked any movies yet.</p>
       ) : (
         <ul className="p">
           {likedMovies.map((movieName) => (

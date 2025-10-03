@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
-import { auth } from "../firebase.cjs";
+import { auth } from "../../firebase.cjs";
 import { toast } from "react-toastify";
 
 function Logout() {

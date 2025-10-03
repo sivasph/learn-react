@@ -55,6 +55,8 @@ function HomePage() {
           error={error}
           onSearchChange={setSearchTerm} />
       </div>
+      <br></br>
+      <br></br>
       <Footer />
     </>
   );

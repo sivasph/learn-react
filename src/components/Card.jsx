@@ -1,26 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { auth, db } from "../firebase.cjs"; // use .js or .mjs for ESModules
+import { auth, db } from "../../firebase.cjs";
 import { doc, getDoc, setDoc, deleteDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { toast } from 'react-toastify';
-import movieThumbnail from './assets/default.jpg';
+import movieThumbnail from '../assets/default.jpg';
 
 function Card({ name, image }) {
   const [user, setUser] = useState(null);
   const [liked, setLiked] = useState(false);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        const likeDocRef = doc(db, "users", currentUser.uid, "likes", name);
-        const docSnap = await getDoc(likeDocRef);
-        setLiked(docSnap.exists());
+        checkIfLiked(currentUser.uid);
+      } else {
+        setLiked(false);
+        setLoading(false);
       }
     });
 
     return () => unsubscribe();
   }, [name]);
+
+  const checkIfLiked = async (uid) => {
+    setLoading(true);
+    try {
+      const likeDocRef = doc(db, "users", uid, "likes", name);
+      const docSnap = await getDoc(likeDocRef);
+      setLiked(docSnap.exists());
+    } catch (err) {
+      console.error("Error checking like:", err);
+      toast.error("Error loading like status");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleLikeToggle = async () => {
     if (!user) {
@@ -34,11 +50,9 @@ function Card({ name, image }) {
       if (liked) {
         await deleteDoc(likeDocRef);
         setLiked(false);
-        //toast.info("Movie unliked");
       } else {
         await setDoc(likeDocRef, { liked: true });
         setLiked(true);
-        //toast.success("Movie liked!");
       }
     } catch (err) {
       console.error("Error updating like status:", err);
@@ -50,11 +64,11 @@ function Card({ name, image }) {
     if (navigator.share) {
       navigator.share({
         title: 'Movies Zone',
-        text: `Check out ${name}!`,
+        text: `Watch my favorite movie! : ${name}`,
         url: window.location.href,
       });
     } else {
-      alert("Sharing not supported in this browser.");
+      toast.error("Sharing not supported in this browser.");
     }
   };
 
@@ -64,15 +78,19 @@ function Card({ name, image }) {
       <img
         alt="Movie Poster"
         src={image}
-        className="card-image"
+        className='card-image'
         onError={(e) => {
           e.target.onerror = null;
           e.target.src = movieThumbnail;
         }}
       />
       <div className="like-buttons" onClick={handleLikeToggle}>
-        <button className="like-button">
-          {liked ? "💔 Unlike" : "❤️ Like"}
+        <button className="like-button" disabled={loading}>
+          {loading
+            ? "Loading..."
+            : liked
+            ? "💔 Unlike"
+            : "❤️ Like"}
         </button>
       </div>
       <div className="share-buttons" onClick={handleNativeShare}>

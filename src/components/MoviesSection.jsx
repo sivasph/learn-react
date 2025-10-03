@@ -1,9 +1,8 @@
 import React from "react";
 import Card from './Card';
 import { useNavigate } from 'react-router-dom';
-import movieThumbnail from './assets/default.jpg';
+import movieThumbnail from '../assets/default.jpg';
 import { Link } from 'react-router-dom';
-//import moviesData from './data/movies.json'
 import { useState } from "react";
 
 function resolveImage(imageKey) {

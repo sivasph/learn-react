@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import movieThumbnail from './assets/default.jpg';
+import movieThumbnail from '../assets/default.jpg';
 
 
 function resolveImage(imageKey) {
